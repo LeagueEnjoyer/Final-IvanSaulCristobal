@@ -29,8 +29,11 @@ namespace Final_IvanSaulCristobal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mtrackVolume = new System.Windows.Forms.TrackBar();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.CuantosBarcosQuendan = new System.Windows.Forms.Label();
@@ -39,6 +42,8 @@ namespace Final_IvanSaulCristobal
             this.radioButtonVertical = new System.Windows.Forms.RadioButton();
             this.radioButtonHorizontal = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mtrackVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,11 +73,13 @@ namespace Final_IvanSaulCristobal
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(524, 488);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 518);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mtrackVolume);
+            this.panel1.Controls.Add(this.pictureBox33);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.CuantosBarcosQuendan);
@@ -82,8 +89,37 @@ namespace Final_IvanSaulCristobal
             this.panel1.Controls.Add(this.radioButtonHorizontal);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 488);
+            this.panel1.Size = new System.Drawing.Size(200, 518);
             this.panel1.TabIndex = 1;
+            // 
+            // mtrackVolume
+            // 
+            this.mtrackVolume.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mtrackVolume.AutoSize = false;
+            this.mtrackVolume.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.mtrackVolume.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtrackVolume.Location = new System.Drawing.Point(52, 475);
+            this.mtrackVolume.Name = "mtrackVolume";
+            this.mtrackVolume.Size = new System.Drawing.Size(136, 40);
+            this.mtrackVolume.TabIndex = 12;
+            this.mtrackVolume.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.mtrackVolume.Visible = false;
+            this.mtrackVolume.ValueChanged += new System.EventHandler(this.mtrackVolume_ValueChanged_1);
+            this.mtrackVolume.MouseLeave += new System.EventHandler(this.mtrackVolume_MouseLeave_1);
+            // 
+            // pictureBox33
+            // 
+            this.pictureBox33.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox33.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox33.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox33.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox33.Image")));
+            this.pictureBox33.Location = new System.Drawing.Point(0, 469);
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox33.TabIndex = 11;
+            this.pictureBox33.TabStop = false;
+            this.pictureBox33.Click += new System.EventHandler(this.pictureBox33_Click_1);
             // 
             // button2
             // 
@@ -156,7 +192,7 @@ namespace Final_IvanSaulCristobal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 512);
+            this.ClientSize = new System.Drawing.Size(850, 542);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -165,6 +201,8 @@ namespace Final_IvanSaulCristobal
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mtrackVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -181,6 +219,8 @@ namespace Final_IvanSaulCristobal
         private System.Windows.Forms.Label CuantosBarcosQuendan;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TrackBar mtrackVolume;
+        private System.Windows.Forms.PictureBox pictureBox33;
     }
 }
 

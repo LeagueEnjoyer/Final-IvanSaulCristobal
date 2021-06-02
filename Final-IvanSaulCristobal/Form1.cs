@@ -19,7 +19,7 @@ namespace Final_IvanSaulCristobal
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //Esto es una prueba 2.0
         }
     }
 }

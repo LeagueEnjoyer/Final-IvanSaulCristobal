@@ -25,5 +25,16 @@ namespace Final_IvanSaulCristobal
 
             //puto github
         }
+
+        private void radioButtonVertical_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonHorizontal_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

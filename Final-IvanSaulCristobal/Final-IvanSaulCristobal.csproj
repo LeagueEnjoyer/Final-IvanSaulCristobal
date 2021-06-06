@@ -106,9 +106,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoDe3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BarcoDe3-1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -116,9 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarcoDe3-3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarcoGrande4.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarcoGrande4-1.png" />
@@ -133,16 +127,67 @@
     <None Include="Resources\BarcoGrande4-4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoMediano2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BarcoMediano2-1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarcoMediano2-2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BarcoGrande4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoMediano2.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\BarcoPequeño1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoDe3-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoDe3-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoDe3-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoGrande4-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoGrande4-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoGrande4-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoGrande4-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoMediano2-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoMediano2-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VBarcoPequeño1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoDe3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_theme.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SFX_agua.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SFX_hit.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SFX_hundido.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

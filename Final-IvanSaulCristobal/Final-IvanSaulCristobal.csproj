@@ -106,25 +106,25 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoDe3-1.png" />
+    <None Include="Resources\BarcoDe3_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoDe3-2.png" />
+    <None Include="Resources\BarcoDe3_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoDe3-3.png" />
+    <None Include="Resources\BarcoDe3_3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoGrande4-1.png" />
+    <None Include="Resources\BarcoGrande4_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoGrande4-2.png" />
+    <None Include="Resources\BarcoGrande4_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoGrande4-3.png" />
+    <None Include="Resources\BarcoGrande4_3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoGrande4-4.png" />
+    <None Include="Resources\BarcoGrande4_4.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarcoMediano2-1.png" />

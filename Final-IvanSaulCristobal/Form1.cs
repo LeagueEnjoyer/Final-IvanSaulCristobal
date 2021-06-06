@@ -80,103 +80,87 @@ namespace Final_IvanSaulCristobal
 
         private void btnCarta_Click(object sender, EventArgs e)
         {
-            PictureBox clickedBox = (PictureBox)sender;
+            PictureBox clickedBox1 = (PictureBox)sender;
 
-            posiconActual = Convert.ToInt32(clickedBox.Name);
-            decenaActual = (int)(posiconActual / 10);
-            decenaParaComprobar = (int)((posiconActual + (comboBox1.SelectedIndex + 1)) / 10);
-            valorParaComprobar = (posiconActual + (comboBox1.SelectedIndex * 10));
 
-            if (radioButtonHorizontal.Checked && (decenaParaComprobar == decenaActual)){
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Primero debes seleccionar que barco deseas colocar...");
+            }
+            if(!radioButtonHorizontal.Checked && !radioButtonVertical.Checked && comboBox1.SelectedIndex != -1)
+            {
+                MessageBox.Show("Primero debes seleccionar si quieres los barcos en horizontal o en vertical...");
+            }
 
-                clickedBox.Image = null;
-                for(int i = 0; i < comboBox1.SelectedIndex; i++)
+            if(comboBox1.SelectedIndex == 0 && barco1count > 0)
+            {
+                if((int)clickedBox1.Tag != 1)
                 {
-                    Marea[posiconActual + (i+1)].Image = null;
-                    if(i == 0)
-                    {
-                        if (posiconActual)
-                        {
-                            Marea[posiconActual + i].Tag = 1;
-                            Marea[posiconActual + i - 10].Tag = 1;
-                            Marea[posiconActual + i + 10].Tag = 1;
-                        }
-                        Marea[posiconActual + i + 1 - 10].Tag = 1;
-                        Marea[posiconActual + i + 1 + 10].Tag = 1;
-                    } else if (i == comboBox1.SelectedIndex - 1)
-                    {
-                        Marea[posiconActual + i + 1 - 10].Tag = 1;
-                        Marea[posiconActual + i + 1 + 10].Tag = 1;
-                        //if ((posiconActual + i + 2)
-                        Marea[posiconActual + i + 2].Tag = 1;
-                        Marea[posiconActual + i + 2 - 10].Tag = 1;
-                        Marea[posiconActual + i + 2 + 10].Tag = 1;
-                    } else
-                    {
-                        Marea[posiconActual + i + 1 - 10].Tag = 1;
-                        Marea[posiconActual + i + 1 + 10].Tag = 1;
-                    }
-                    switch (comboBox1.SelectedIndex)
-                    {
-                        case 0:
-                            Marea[posiconActual].Tag = barco1colocado;
-                            break;
-                        case 1:
-                            Marea[posiconActual].Tag = barco2colocado;
-                            break;
-                        case 2:
-                            Marea[posiconActual].Tag = barco3colocado;
-                            break;
-                        case 3:
-                            Marea[posiconActual].Tag = barco4colocado;
-                            break;
-                    }
+                    ponerEnHorizontal(clickedBox1);
+                    ponerEnVertical(clickedBox1);
+                    label1.Text = "Te quedan " + barco1count + " barcos pequeños.";
                 }
-                switch (comboBox1.SelectedIndex)
+                else
                 {
-                    case 0:
-                        barco1count--;
-                        break;
-                    case 1:
-                        barco2count--;
-                        barco2colocado++;
-                        break;
-                    case 2:
-                        barco3count--;
-                        barco3colocado++;
-                        break;
-                    case 3:
-                        barco4count--;
-                        break;
+                    MessageBox.Show("No pongas barcos adyacentes!");
                 }
             }
-
-            if (radioButtonVertical.Checked && (valorParaComprobar < 100))
+            else if (comboBox1.SelectedIndex == 0 && barco1count == 0)
             {
-
-                clickedBox.Image = null;
-                for (int i = 0; i < comboBox1.SelectedIndex; i++)
+                MessageBox.Show("No te quedan barcos pequeños!");
+            }
+            if (comboBox1.SelectedIndex == 1 && barco2count > 0)
+            {
+                if ((int)clickedBox1.Tag != 1)
                 {
-                    Marea[posiconActual + ((i+1)*10)].Image = null;
+                    ponerEnHorizontal(clickedBox1);
+                    ponerEnVertical(clickedBox1);
+                    label1.Text = "Te quedan " + barco1count + " barcos medianos.";
                 }
-
+                else
+                {
+                    MessageBox.Show("No pongas barcos adyacentes!");
+                }
             }
-            if (barco4count == 0)
+            else if (comboBox1.SelectedIndex == 1 && barco2count == 0)
             {
-                comboBox1.Items.Remove("Barco 4");
+                MessageBox.Show("No te quedan barcos medianos!");
             }
-            if (barco3count == 0)
+            if (comboBox1.SelectedIndex == 2 && barco3count > 0)
             {
-                comboBox1.Items.Remove("Barco 3");
+                if ((int)clickedBox1.Tag != 1)
+                {
+                    ponerEnHorizontal(clickedBox1);
+                    ponerEnVertical(clickedBox1);
+                    label1.Text = "Te quedan " + barco1count + " barcos grandes.";
+                }
+                else
+                {
+                    MessageBox.Show("No pongas barcos adyacentes!");
+                }
             }
-            if (barco2count == 0)
+            else if (comboBox1.SelectedIndex == 2 && barco3count == 0)
             {
-                comboBox1.Items.Remove("Barco 2");
+                MessageBox.Show("No te quedan barcos grandes!");
             }
-            if (barco1count == 0)
+            if (comboBox1.SelectedIndex == 3 && barco4count > 0)
             {
-                comboBox1.Items.Remove("Barco 1");
+                if ((int)clickedBox1.Tag != 1)
+                {
+                    ponerEnHorizontal(clickedBox1);
+                    ponerEnVertical(clickedBox1);
+                    label1.Text = "Te quedan " + barco1count + " destructores.";
+                }
+                else
+                {
+                    MessageBox.Show("No pongas barcos adyacentes!");
+                }
             }
+            else if (comboBox1.SelectedIndex == 3 && barco4count == 0)
+            {
+                MessageBox.Show("No te quedan destructores!");
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -222,16 +206,226 @@ namespace Final_IvanSaulCristobal
             if (comboBox1.SelectedIndex == 0)
             {
                 pictureBox1.Image = Properties.Resources.BarcoPequeño1;
+                label1.Text = "Te quedan " + barco1count + " barcos pequeños.";
             } else if (comboBox1.SelectedIndex == 1)
             {
                 pictureBox1.Image = Properties.Resources.BarcoMediano2;
+                label1.Text = "Te quedan " + barco2count + " barcos medianos.";
             }
             else if (comboBox1.SelectedIndex == 2)
             {
                 pictureBox1.Image = Properties.Resources.BarcoDe3;
+                label1.Text = "Te quedan " + barco3count + " barcos grandes.";
             } else
             {
                 pictureBox1.Image = Properties.Resources.BarcoGrande4;
+                label1.Text = "Te quedan " + barco4count + " destructores.";
+            }
+        }
+
+        private void ponerEnHorizontal(PictureBox clickedBox2)
+        {
+            posiconActual = Convert.ToInt32(clickedBox2.Name);
+            decenaActual = (int)(posiconActual / 10);
+            decenaParaComprobar = (int)((posiconActual + (comboBox1.SelectedIndex)) / 10);
+            valorParaComprobar = (posiconActual + (comboBox1.SelectedIndex * 10));
+
+            if (radioButtonHorizontal.Checked && (decenaParaComprobar == decenaActual))
+            {
+
+                clickedBox2.Image = null;
+                for (int i = 0; i < comboBox1.SelectedIndex; i++)
+                {
+                    Marea[posiconActual + (i + 1)].Image = null;
+                    if (i == 0)
+                    {
+                        if (((posiconActual + i-1) - decenaActual * 10) >= 0)
+                        {
+                            Marea[posiconActual + i-1].Tag = 1;
+                        }
+                        if (((posiconActual + i - 1) - decenaActual * 10) >= 0 && decenaActual > 0)
+                        {
+                            Marea[posiconActual + i - 1 - 10].Tag = 1;
+                            Marea[posiconActual + i - 10].Tag = 1;
+                        }
+                        if (((posiconActual + i - 1) - decenaActual * 10) >= 0 && decenaActual < 9)
+                        {
+
+                            Marea[posiconActual + i - 1 + 10].Tag = 1;
+                            Marea[posiconActual + i + 10].Tag = 1;
+                        }
+                    }
+                    else if (i == comboBox1.SelectedIndex - 1)
+                    {
+                        if (((posiconActual + i + 1) - decenaActual * 10) < 10)
+                        {
+                            Marea[posiconActual + i + 1].Tag = 1;
+                            Marea[posiconActual + i + 2].Tag = 1;
+                        }
+                        if (((posiconActual + i + 1) - decenaActual * 10) >= 0 && decenaActual > 0)
+                        {
+                            Marea[posiconActual + i + 2 - 10].Tag = 1;
+                            Marea[posiconActual + i + 1 - 10].Tag = 1;
+                            Marea[posiconActual + i - 10].Tag = 1;
+                        }
+                        if (((posiconActual + i + 1) - decenaActual * 10) >= 0 && decenaActual < 9)
+                        {
+                            Marea[posiconActual + i + 2 + 10].Tag = 1;
+                            Marea[posiconActual + i + 1 + 10].Tag = 1;
+                            Marea[posiconActual + i + 10].Tag = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (decenaActual > 0)
+                        {
+                            Marea[posiconActual + i - 10].Tag = 1;
+                        }
+                        if (decenaActual < 9)
+                        {
+                            Marea[posiconActual + i + 10].Tag = 1;
+                        }
+                    }
+                    switch (comboBox1.SelectedIndex)
+                    {
+                        case 0:
+                            Marea[posiconActual].Tag = barco1colocado;
+                            break;
+                        case 1:
+                            Marea[posiconActual].Tag = barco2colocado;
+                            break;
+                        case 2:
+                            Marea[posiconActual].Tag = barco3colocado;
+                            break;
+                        case 3:
+                            Marea[posiconActual].Tag = barco4colocado;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        barco1count--;
+                        break;
+                    case 1:
+                        barco2count--;
+                        barco2colocado++;
+                        break;
+                    case 2:
+                        barco3count--;
+                        barco3colocado++;
+                        break;
+                    case 3:
+                        barco4count--;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void ponerEnVertical(PictureBox clickedBox3)
+        {
+
+            posiconActual = Convert.ToInt32(clickedBox3.Name);
+            decenaActual = (int)(posiconActual / 10);
+            decenaParaComprobar = (int)((posiconActual + (comboBox1.SelectedIndex)) / 10);
+            valorParaComprobar = (posiconActual + (comboBox1.SelectedIndex * 10));
+
+            if (radioButtonVertical.Checked && (valorParaComprobar < 100))
+            {
+
+                clickedBox3.Image = null;
+                for (int i = 0; i < comboBox1.SelectedIndex; i++)
+                {
+                    Marea[posiconActual + ((i + 1) * 10)].Image = null;
+                    //Marea[posiconActual + (i + 1)].Image = null;
+                    if (i == 0)
+                    {
+                        if ((posiconActual + (i * 10) - decenaActual * 10) >= 0)
+                        {
+                            Marea[posiconActual + (i * 10)].Tag = 1;
+                        }
+                        if ((posiconActual + (i * 10)) - decenaActual * 10 >= 0 && decenaActual > 0)
+                        {
+                            Marea[posiconActual + (i * 10) - 10].Tag = 1;
+                            Marea[posiconActual + ((i + 1) * 10) - 10].Tag = 1;
+                        }
+                        if ((posiconActual + ((i + i) * 10) + 10) < 100 && decenaActual < 9)
+                        {
+
+                            Marea[posiconActual + (i * 10) + 10].Tag = 1;
+                            Marea[posiconActual + ((i + 1) * 10) + 10].Tag = 1;
+                        }
+                    }
+                    else if (i == comboBox1.SelectedIndex - 1)
+                    {
+                        if (((posiconActual + ((i + 2) * 10)) - decenaActual * 10) < 10)
+                        {
+                            Marea[posiconActual + ((i + 2) * 10)].Tag = 1;
+                        }
+                        if (((posiconActual + ((i + 2) * 10)) - decenaActual * 10) >= 0 && decenaActual > 0)
+                        {
+                            Marea[posiconActual + ((i + 2) * 10) - 10].Tag = 1;
+                            Marea[posiconActual + ((i + 1) * 10) - 10].Tag = 1;
+                        }
+                        if ((posiconActual + ((i + 2) * 10) + 10) < 100 && decenaActual < 9)
+                        {
+                            //MessageBox.Show((posiconActual + ((i + 2) * 10) + 10).ToString());
+                            Marea[posiconActual + ((i + 2) * 10) + 10].Tag = 1;
+                            Marea[posiconActual + ((i + 1) * 10) + 10].Tag = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (decenaActual > 0)
+                        {
+                            Marea[posiconActual + ((i + 1) * 10) - 10].Tag = 1;
+                        }
+                        if (decenaActual < 9)
+                        {
+                            Marea[posiconActual + ((i + 1) * 10) + 10].Tag = 1;
+                        }
+                    }
+                    switch (comboBox1.SelectedIndex)
+                    {
+                        case 0:
+                            Marea[posiconActual].Tag = barco1colocado;
+                            break;
+                        case 1:
+                            Marea[posiconActual].Tag = barco2colocado;
+                            break;
+                        case 2:
+                            Marea[posiconActual].Tag = barco3colocado;
+                            break;
+                        case 3:
+                            Marea[posiconActual].Tag = barco4colocado;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        barco1count--;
+                        break;
+                    case 1:
+                        barco2count--;
+                        barco2colocado++;
+                        break;
+                    case 2:
+                        barco3count--;
+                        barco3colocado++;
+                        break;
+                    case 3:
+                        barco4count--;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

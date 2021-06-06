@@ -17,7 +17,13 @@ namespace Final_IvanSaulCristobal
     public partial class Form1 : Form
     {
 
-        List<string> Marea = new List<string>();
+        List<PictureBox> Marea = new List<PictureBox>();
+        PictureBox barco1 = new PictureBox();
+
+        int posiconActual;
+        int decenaActual;
+        int decenaParaComprobar;
+        int valorParaComprobar;
 
         WindowsMediaPlayer sonido = new WindowsMediaPlayer();
         WindowsMediaPlayer sonido2 = new WindowsMediaPlayer();
@@ -29,19 +35,14 @@ namespace Final_IvanSaulCristobal
             sonido.settings.volume = 3;
             sonido2.settings.volume = 4;
             AssignIconsToSquares();
-            comboBox1.Items.Add("Barco 4");
-            comboBox1.Items.Add("Barco 3");
-            comboBox1.Items.Add("Barco 2");
-            comboBox1.Items.Add("Barco 1");
 
         }
 
         private void AssignIconsToSquares()
         {
             tableLayoutPanel1.Controls.Clear();
-            Marea = new List<string>();
 
-            int contadorFichas = 1;
+            int contadorFichas = 0;
 
             for (int i = 0; i < 10; i++)
             {
@@ -52,11 +53,49 @@ namespace Final_IvanSaulCristobal
                     CartasJuego.Dock = DockStyle.Fill;
                     CartasJuego.SizeMode = PictureBoxSizeMode.StretchImage;
                     CartasJuego.Image = Properties.Resources.fondoMarea;
+                    CartasJuego.Tag = 0;
+                    CartasJuego.Click += btnCarta_Click;
                     tableLayoutPanel1.Controls.Add(CartasJuego, j, i);
+                    Marea.Add(CartasJuego);
                     contadorFichas++;
                 }
             }
+            comboBox1.Items.Add("Barco 1");
+            comboBox1.Items.Add("Barco 2");
+            comboBox1.Items.Add("Barco 3");
+            comboBox1.Items.Add("Barco 4");
 
+        }
+
+        private void btnCarta_Click(object sender, EventArgs e)
+        {
+            PictureBox clickedBox = (PictureBox)sender;
+
+            posiconActual = Convert.ToInt32(clickedBox.Name);
+            decenaActual = (int)(posiconActual / 10);
+            decenaParaComprobar = (int)((posiconActual + (comboBox1.SelectedIndex + 1)) / 10);
+            valorParaComprobar = (posiconActual + (comboBox1.SelectedIndex * 10));
+
+            if (radioButtonHorizontal.Checked && (decenaParaComprobar == decenaActual)){
+
+                clickedBox.Image = null;
+                for(int i = 0; i < comboBox1.SelectedIndex; i++)
+                {
+                    Marea[posiconActual + (i+1)].Image = null;
+                }
+                
+            }
+
+            if (radioButtonVertical.Checked && (valorParaComprobar < 100))
+            {
+
+                clickedBox.Image = null;
+                for (int i = 0; i < comboBox1.SelectedIndex; i++)
+                {
+                    Marea[posiconActual + ((i+1)*10)].Image = null;
+                }
+
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -24,6 +24,17 @@ namespace Final_IvanSaulCristobal
         int decenaActual;
         int decenaParaComprobar;
         int valorParaComprobar;
+        int barco4count = 1;
+        int barco3count = 2;
+        int barco2count = 3;
+        int barco1count = 4;
+
+        int barco4colocado = 2;
+        int barco3colocado = 3;
+        int barco2colocado = 5;
+        int barco1colocado = 8;
+        
+
 
         WindowsMediaPlayer sonido = new WindowsMediaPlayer();
         WindowsMediaPlayer sonido2 = new WindowsMediaPlayer();
@@ -82,8 +93,59 @@ namespace Final_IvanSaulCristobal
                 for(int i = 0; i < comboBox1.SelectedIndex; i++)
                 {
                     Marea[posiconActual + (i+1)].Image = null;
+                    if(i == 0)
+                    {
+                        Marea[posiconActual + i].Tag = 1;
+                        Marea[posiconActual + i - 10].Tag = 1;
+                        Marea[posiconActual + i + 10].Tag = 1;
+                        Marea[posiconActual + i + 1 - 10].Tag = 1;
+                        Marea[posiconActual + i + 1 + 10].Tag = 1;
+                    } else if (i == comboBox1.SelectedIndex)
+                    {
+                        Marea[posiconActual + i + 1 - 10].Tag = 1;
+                        Marea[posiconActual + i + 1 + 10].Tag = 1;
+                        if ((posiconActual + i + 2)
+                        Marea[posiconActual + i + 2].Tag = 1;
+                        Marea[posiconActual + i + 2 - 10].Tag = 1;
+                        Marea[posiconActual + i + 2 + 10].Tag = 1;
+                    } else
+                    {
+                        Marea[posiconActual + i + 1 - 10].Tag = 1;
+                        Marea[posiconActual + i + 1 + 10].Tag = 1;
+                    }
+                    switch (comboBox1.SelectedIndex)
+                    {
+                        case 0:
+                            Marea[posiconActual].Tag = barco1colocado;
+                            break;
+                        case 1:
+                            Marea[posiconActual].Tag = barco2colocado;
+                            break;
+                        case 2:
+                            Marea[posiconActual].Tag = barco3colocado;
+                            break;
+                        case 3:
+                            Marea[posiconActual].Tag = barco4colocado;
+                            break;
+                    }
                 }
-                
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        barco1count--;
+                        break;
+                    case 1:
+                        barco2count--;
+                        barco2colocado++;
+                        break;
+                    case 2:
+                        barco3count--;
+                        barco3colocado++;
+                        break;
+                    case 3:
+                        barco4count--;
+                        break;
+                }
             }
 
             if (radioButtonVertical.Checked && (valorParaComprobar < 100))
@@ -95,6 +157,22 @@ namespace Final_IvanSaulCristobal
                     Marea[posiconActual + ((i+1)*10)].Image = null;
                 }
 
+            }
+            if (barco4count == 0)
+            {
+                comboBox1.Items.Remove("Barco 4");
+            }
+            if (barco3count == 0)
+            {
+                comboBox1.Items.Remove("Barco 3");
+            }
+            if (barco2count == 0)
+            {
+                comboBox1.Items.Remove("Barco 2");
+            }
+            if (barco1count == 0)
+            {
+                comboBox1.Items.Remove("Barco 1");
             }
         }
 
@@ -137,19 +215,20 @@ namespace Final_IvanSaulCristobal
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //pictureBox1.Dock = DockStyle.Fill;
             if (comboBox1.SelectedIndex == 0)
             {
-                CuantosBarcosQuendan.Text = "4";
+                pictureBox1.Image = Properties.Resources.BarcoPequeño1;
             } else if (comboBox1.SelectedIndex == 1)
             {
-                CuantosBarcosQuendan.Text = "3";
+                pictureBox1.Image = Properties.Resources.BarcoMediano2;
             }
             else if (comboBox1.SelectedIndex == 2)
             {
-                CuantosBarcosQuendan.Text = "2";
+                pictureBox1.Image = Properties.Resources.BarcoDe3;
             } else
             {
-                CuantosBarcosQuendan.Text = "1";
+                pictureBox1.Image = Properties.Resources.BarcoGrande4;
             }
         }
     }

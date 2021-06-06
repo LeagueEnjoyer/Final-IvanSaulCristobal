@@ -127,10 +127,10 @@
     <None Include="Resources\BarcoGrande4_4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoMediano2-1.png" />
+    <None Include="Resources\BarcoMediano2_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BarcoMediano2-2.png" />
+    <None Include="Resources\BarcoMediano2_2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarcoGrande4.png" />

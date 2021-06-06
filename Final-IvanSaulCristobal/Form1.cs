@@ -29,6 +29,11 @@ namespace Final_IvanSaulCristobal
             sonido.settings.volume = 3;
             sonido2.settings.volume = 4;
             AssignIconsToSquares();
+            comboBox1.Items.Add("Barco 4");
+            comboBox1.Items.Add("Barco 3");
+            comboBox1.Items.Add("Barco 2");
+            comboBox1.Items.Add("Barco 1");
+
         }
 
         private void AssignIconsToSquares()
@@ -89,6 +94,24 @@ namespace Final_IvanSaulCristobal
             sonido.settings.volume = mtrackVolume.Value;
             sonido2.settings.volume = mtrackVolume.Value;
             sonido3.settings.volume = mtrackVolume.Value;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                CuantosBarcosQuendan.Text = "4";
+            } else if (comboBox1.SelectedIndex == 1)
+            {
+                CuantosBarcosQuendan.Text = "3";
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                CuantosBarcosQuendan.Text = "2";
+            } else
+            {
+                CuantosBarcosQuendan.Text = "1";
+            }
         }
     }
 }

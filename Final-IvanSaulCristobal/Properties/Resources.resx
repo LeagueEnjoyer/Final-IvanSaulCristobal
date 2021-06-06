@@ -160,11 +160,35 @@
   <data name="fondoMarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoMarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jugarOFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jugarOFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jugarON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jugarON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="main_theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main_theme.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="optionsOFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\optionsOFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="optionsON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\optionsON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salirOFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salirOFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salirON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salirON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SFX_agua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SFX_agua.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -174,6 +198,9 @@
   </data>
   <data name="SFX_hundido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SFX_hundido.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sonido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VBarcoDe3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VBarcoDe3-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

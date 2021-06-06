@@ -32,6 +32,7 @@ namespace Final_IvanSaulCristobal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.mtrackVolume = new System.Windows.Forms.TrackBar();
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace Final_IvanSaulCristobal
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButtonVertical = new System.Windows.Forms.RadioButton();
             this.radioButtonHorizontal = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mtrackVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
@@ -94,6 +94,14 @@ namespace Final_IvanSaulCristobal
             this.panel1.Size = new System.Drawing.Size(302, 526);
             this.panel1.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(15, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 23);
+            this.label1.TabIndex = 2;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mtrackVolume
             // 
             this.mtrackVolume.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -134,6 +142,7 @@ namespace Final_IvanSaulCristobal
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -144,6 +153,7 @@ namespace Final_IvanSaulCristobal
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox1
             // 
@@ -189,14 +199,6 @@ namespace Final_IvanSaulCristobal
             this.radioButtonHorizontal.Text = "Horizontal";
             this.radioButtonHorizontal.UseVisualStyleBackColor = true;
             this.radioButtonHorizontal.CheckedChanged += new System.EventHandler(this.radioButtonHorizontal_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(15, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 23);
-            this.label1.TabIndex = 2;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 

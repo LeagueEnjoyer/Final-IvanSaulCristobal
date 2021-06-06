@@ -18,7 +18,6 @@ namespace Final_IvanSaulCristobal
     {
 
         List<PictureBox> Marea = new List<PictureBox>();
-        PictureBox barco1 = new PictureBox();
 
         int posiconActual;
         int decenaActual;
@@ -33,8 +32,7 @@ namespace Final_IvanSaulCristobal
         int barco3colocado = 3;
         int barco2colocado = 5;
         int barco1colocado = 8;
-        int barcoImgCount = 0;
-        
+
 
 
         WindowsMediaPlayer sonido = new WindowsMediaPlayer();
@@ -88,7 +86,7 @@ namespace Final_IvanSaulCristobal
             {
                 MessageBox.Show("Primero debes seleccionar que barco deseas colocar...");
             }
-            if(!radioButtonHorizontal.Checked && !radioButtonVertical.Checked && comboBox1.SelectedIndex != -1)
+            if (!radioButtonHorizontal.Checked && !radioButtonVertical.Checked && comboBox1.SelectedIndex != -1)
             {
                 MessageBox.Show("Primero debes seleccionar si quieres los barcos en horizontal o en vertical...");
             }
@@ -96,7 +94,7 @@ namespace Final_IvanSaulCristobal
 
             if (comboBox1.SelectedIndex == 0 && barco1count > 0)
             {
-                if((int)clickedBox1.Tag == 0)
+                if ((int)clickedBox1.Tag == 0)
                 {
                     ponerEnHorizontal(clickedBox1);
                     ponerEnVertical(clickedBox1);
@@ -130,7 +128,7 @@ namespace Final_IvanSaulCristobal
             }
             if (comboBox1.SelectedIndex == 2 && barco3count > 0)
             {
-                if ((int)clickedBox1.Tag  == 0)
+                if ((int)clickedBox1.Tag == 0)
                 {
                     ponerEnHorizontal(clickedBox1);
                     ponerEnVertical(clickedBox1);
@@ -162,7 +160,7 @@ namespace Final_IvanSaulCristobal
             {
                 MessageBox.Show("No te quedan destructores!");
             }
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -209,7 +207,8 @@ namespace Final_IvanSaulCristobal
             {
                 pictureBox1.Image = Properties.Resources.BarcoPequeño1;
                 label1.Text = "Te quedan " + barco1count + " barcos pequeños.";
-            } else if (comboBox1.SelectedIndex == 1)
+            }
+            else if (comboBox1.SelectedIndex == 1)
             {
                 pictureBox1.Image = Properties.Resources.BarcoMediano2;
                 label1.Text = "Te quedan " + barco2count + " barcos medianos.";
@@ -218,7 +217,8 @@ namespace Final_IvanSaulCristobal
             {
                 pictureBox1.Image = Properties.Resources.BarcoDe3;
                 label1.Text = "Te quedan " + barco3count + " barcos grandes.";
-            } else
+            }
+            else
             {
                 pictureBox1.Image = Properties.Resources.BarcoGrande4;
                 label1.Text = "Te quedan " + barco4count + " destructores.";
@@ -279,15 +279,14 @@ namespace Final_IvanSaulCristobal
                         }
                     }
                     clickedBox2.Image = Properties.Resources.BarcoPequeño1;
-                    clickedBox2.Dock = DockStyle.Fill;
                 }
                 for (int i = 0; i < comboBox1.SelectedIndex; i++)
                 {
                     if (i == 0)
                     {
-                        if (((posiconActual + i-1) - decenaActual * 10) >= 0)
+                        if (((posiconActual + i - 1) - decenaActual * 10) >= 0)
                         {
-                            Marea[posiconActual + i-1].Tag = 1;
+                            Marea[posiconActual + i - 1].Tag = 1;
                         }
                         if (((posiconActual + i - 1) - decenaActual * 10) >= 0 && decenaActual > 0)
                         {
@@ -338,15 +337,15 @@ namespace Final_IvanSaulCristobal
                             Marea[posiconActual + i].Tag = barco1colocado;
                             break;
                         case 1:
-                            Marea[posiconActual+i].Tag = barco2colocado;
-                            if(i == 0)
+                            Marea[posiconActual + i].Tag = barco2colocado;
+                            if (i == 0)
                             {
                                 Marea[posiconActual + i].Image = Properties.Resources.BarcoMediano2_1;
-                                Marea[posiconActual + (i+1)].Image = Properties.Resources.BarcoMediano2_2;
+                                Marea[posiconActual + (i + 1)].Image = Properties.Resources.BarcoMediano2_2;
                             }
                             break;
                         case 2:
-                            Marea[posiconActual+i].Tag = barco3colocado;
+                            Marea[posiconActual + i].Tag = barco3colocado;
                             if (i == 0)
                             {
                                 Marea[posiconActual + i].Image = Properties.Resources.BarcoDe3_1;
@@ -355,7 +354,7 @@ namespace Final_IvanSaulCristobal
                             }
                             break;
                         case 3:
-                            Marea[posiconActual+i].Tag = barco4colocado;
+                            Marea[posiconActual + i].Tag = barco4colocado;
                             if (i == 0)
                             {
                                 Marea[posiconActual + i].Image = Properties.Resources.BarcoGrande4_1;
@@ -402,13 +401,12 @@ namespace Final_IvanSaulCristobal
             {
                 for (int i = 0; i < comboBox1.SelectedIndex; i++)
                 {
-                    if ((int)Marea[posiconActual + (i*10)].Tag != 0)
+                    if ((int)Marea[posiconActual + (i * 10)].Tag != 0)
                     {
                         MessageBox.Show("No puedes meter un barco aquí!");
                         return;
                     }
                 }
-                clickedBox3.Image = null;
                 if (comboBox1.SelectedIndex == 0)
                 {
                     Marea[posiconActual].Tag = barco1colocado;
@@ -444,11 +442,11 @@ namespace Final_IvanSaulCristobal
                             Marea[posiconActual + 1].Tag = 1;
                         }
                     }
+                    clickedBox3.Image = Properties.Resources.VBarcoPequeño1;
+
                 }
                 for (int i = 0; i < comboBox1.SelectedIndex; i++)
                 {
-                    Marea[posiconActual + ((i + 1) * 10)].Image = null;
-                    //Marea[posiconActual + (i + 1)].Image = null;
                     if (i == 0)
                     {
                         if ((posiconActual + (i * 10) - decenaActual * 10) >= 0)
@@ -499,16 +497,34 @@ namespace Final_IvanSaulCristobal
                     switch (comboBox1.SelectedIndex)
                     {
                         case 0:
-                            Marea[posiconActual].Tag = barco1colocado;
+                            Marea[posiconActual + (i * 10)].Tag = barco1colocado;
                             break;
                         case 1:
-                            Marea[posiconActual].Tag = barco2colocado;
+                            Marea[posiconActual + (i * 10)].Tag = barco2colocado;
+                            if (i == 0)
+                            {
+                                Marea[posiconActual + (i * 10)].Image = Properties.Resources.VBarcoMediano2_1;
+                                Marea[posiconActual + ((i + 1) * 10)].Image = Properties.Resources.VBarcoMediano2_2;
+                            }
                             break;
                         case 2:
-                            Marea[posiconActual].Tag = barco3colocado;
+                            Marea[posiconActual + (i * 10)].Tag = barco3colocado;
+                            if (i == 0)
+                            {
+                                Marea[posiconActual + (i * 10)].Image = Properties.Resources.VBarcoDe3_1;
+                                Marea[posiconActual + ((i + 1) * 10)].Image = Properties.Resources.VBarcoDe3_2;
+                                Marea[posiconActual + ((i + 2) * 10)].Image = Properties.Resources.VBarcoDe3_3;
+                            }
                             break;
                         case 3:
-                            Marea[posiconActual].Tag = barco4colocado;
+                            Marea[posiconActual + i].Tag = barco4colocado;
+                            if (i == 0)
+                            {
+                                Marea[posiconActual + i].Image = Properties.Resources.VBarcoGrande4_1;
+                                Marea[posiconActual + ((i + 1) * 10)].Image = Properties.Resources.VBarcoGrande4_2;
+                                Marea[posiconActual + ((i + 2) * 10)].Image = Properties.Resources.VBarcoGrande4_3;
+                                Marea[posiconActual + ((i + 3) * 10)].Image = Properties.Resources.VBarcoGrande4_4;
+                            }
                             break;
                         default:
                             break;
@@ -533,6 +549,50 @@ namespace Final_IvanSaulCristobal
                     default:
                         break;
                 }
+            }
+        }
+
+        private void btnCarta_Click2(object sender, EventArgs e)
+        {
+            PictureBox imagenSeleccionadaUsu = (PictureBox)sender;
+
+            if ((int)imagenSeleccionadaUsu.Tag != 0 || (int)imagenSeleccionadaUsu.Tag != 1)
+            {
+
+                imagenSeleccionadaUsu.Enabled = false;
+                MessageBox.Show("tocado");
+                MessageBox.Show(((int)imagenSeleccionadaUsu.Tag).ToString());
+            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AssignIconsToSquares();
+            barco4count = 1;
+            barco3count = 2;
+            barco2count = 3;
+            barco1count = 4;
+
+            barco4colocado = 2;
+            barco3colocado = 3;
+            barco2colocado = 5;
+            barco1colocado = 8;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            panel1.Enabled = false;
+            panel1.Visible = false;
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                PictureBox imagePicture = control as PictureBox;
+
+                imagePicture.Image = Properties.Resources.fondoMarea;
+                imagePicture.Click -= btnCarta_Click;
+                imagePicture.Click += btnCarta_Click2;
             }
         }
     }

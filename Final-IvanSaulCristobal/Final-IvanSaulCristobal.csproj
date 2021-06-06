@@ -105,5 +105,44 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoDe3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoDe3-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoDe3-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoDe3-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoGrande4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoGrande4-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoGrande4-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoGrande4-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoGrande4-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoMediano2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoMediano2-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoMediano2-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarcoPequeño1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -95,16 +95,19 @@ namespace Final_IvanSaulCristobal
                     Marea[posiconActual + (i+1)].Image = null;
                     if(i == 0)
                     {
-                        Marea[posiconActual + i].Tag = 1;
-                        Marea[posiconActual + i - 10].Tag = 1;
-                        Marea[posiconActual + i + 10].Tag = 1;
+                        if (posiconActual)
+                        {
+                            Marea[posiconActual + i].Tag = 1;
+                            Marea[posiconActual + i - 10].Tag = 1;
+                            Marea[posiconActual + i + 10].Tag = 1;
+                        }
                         Marea[posiconActual + i + 1 - 10].Tag = 1;
                         Marea[posiconActual + i + 1 + 10].Tag = 1;
-                    } else if (i == comboBox1.SelectedIndex)
+                    } else if (i == comboBox1.SelectedIndex - 1)
                     {
                         Marea[posiconActual + i + 1 - 10].Tag = 1;
                         Marea[posiconActual + i + 1 + 10].Tag = 1;
-                        if ((posiconActual + i + 2)
+                        //if ((posiconActual + i + 2)
                         Marea[posiconActual + i + 2].Tag = 1;
                         Marea[posiconActual + i + 2 - 10].Tag = 1;
                         Marea[posiconActual + i + 2 + 10].Tag = 1;
